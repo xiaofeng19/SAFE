@@ -10,9 +10,11 @@ class Person {
 public:
     Person();
     ~Person();
-    void action(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,int>to;,unordered_map<int,One>table);
+    void action(nordered_map<int,int>to,unordered_map<int,One>table);
 private:
-    vector<One>p;
+    void WriteLog();
+    vector<One>person;
+    int dx[4],dy[4];
 };
 
 #endif  //_PERSON_H_

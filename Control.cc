@@ -23,7 +23,7 @@ void Control::Run(){
         get_data->get(fire_data);
         if (get_data->fire){
             safe->calc(map_table,building_map,fire_data,leave,go_to);
-            person->action(map_table,building_map,go_to,table);
+            person->action(go_to,table);
         }
         else if (get_data->close())
             break;

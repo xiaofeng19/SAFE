@@ -6,7 +6,6 @@ Control::Control(){
     get_data=new GetData;
     person=new Person;
     safe=new Safe;
-    output_data=new OutputData;
 }
 
 Control::~Control(){
@@ -14,7 +13,6 @@ Control::~Control(){
     delete get_data;
     delete person;
     delete safe;
-    delete output_data;
 }
 
 void Control::Run(){

@@ -10,7 +10,7 @@ void MapManager::get_map(unordered_map<int,int>&map_table,vector<Edge>&m,vecotr<
     m.clear();
     leave.clear();
     table.clear();
-    std::fstream Input("./input.log");
+    std::fstream Input("./input.safe");
     int n,m;
     Input>>n;
     for (int i=1;i<=n;i++){

@@ -12,7 +12,7 @@ class MapManager {
 public:
     MapManager();
     ~MapManager();
-    void get_map(unordered_map<int,int>&map_table,vector<Edge>&m,,vecotr<int>&leave,unordered_map<int,One>&table);
+    void get_map(unordered_map<int,int>&map_table,vector<Edge>&m,vecotr<int>&leave,unordered_map<int,One>&table);
 private:
 };
 

@@ -10,14 +10,14 @@ void GetMap::get_map(unordered_map<int,int>&map_table,vector<Edge>&m,vecotr<int>
     m.clear();
     leave.clear();
     table.clear();
-    std::fstream Input("./map.safe");
+    std::ifstream Input("./InputData/map.txt");
     int n,m;
     Input>>n;
     for (int i=1;i<=n;i++){
         map_table[i]=-1;
-        int h,x,y;
-        Input>>h>>x>>y;
-        table[i]=One(x,y,h);
+        int x,y;
+        Input>>x>>y;
+        table[i]=One(x,y);
         int m;
         Input>>m;
         for (int j=0;j<m;j++){

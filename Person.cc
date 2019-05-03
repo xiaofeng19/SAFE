@@ -21,19 +21,15 @@ void Person::action(unordered_map<int,int>map_table,vector<Edge>building_map,uno
 void Person::WriteLog(){
     std::ofstream OutputX("./OutputData/x.txt");
     std::ofstream OutputY("./OutputData/y.txt");
-    std::ofstream OutputH("./OutputData/h.txt");
     for (int i=0;i<person.size();i++){
         OutputX<<person[i].x;
         OutputY<<person[i].y;
-        OutputH<<person[i].h;
         if (i!=person.size()-1){
             OutputX<<"A";
             OutputY<<"A";
-            OutputH<<"A";
         }
     }
     OutputX.close();
     OutputY.close();
-    OutputH.close();
     std::ofstream OutputA("./OutputData/arrow.txt");
 }

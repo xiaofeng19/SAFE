@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1556901314 source:f:\ubuntu\work\work\project\safe\safe\main.cc
+	"Control.h"
+
+1556901307 f:\ubuntu\work\work\project\safe\safe\control.h
+	<string>
+	<vector>
+	<map>
+	"AllStruct.h"
+	"GetMap.h"
+	"GetData.h"
+	"Person.h"
+	"Safe.h"
+
+1556897054 f:\ubuntu\work\work\project\safe\safe\allstruct.h
+	<string>
+
+1556900867 f:\ubuntu\work\work\project\safe\safe\getmap.h
+	<string>
+	<vector>
+	<unordered_map>
+	"AllStruct.h"
+
+1556901793 f:\ubuntu\work\work\project\safe\safe\getdata.h
+	<string>
+	<vector>
+	<unordered_map>
+	"AllStruct.h"
+
+1556901656 f:\ubuntu\work\work\project\safe\safe\person.h
+	<string>
+	<vector>
+	<unordered_map>
+	"AllStruct.h"
+
+1556901836 f:\ubuntu\work\work\project\safe\safe\safe.h
+	<string>
+	<vector>
+	<unordered_map>
+	"AllStruct.h"
+
+1556901648 source:f:\ubuntu\work\work\project\safe\safe\person.cc
+	<fstream>
+	<string>
+	<unordered_map>
+	<vector>
+	"Person.h"
+
+1556901800 source:f:\ubuntu\work\work\project\safe\safe\getdata.cc
+	<fstream>
+	"GetData.h"
+

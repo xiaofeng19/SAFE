@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-#include <map>
+#include <unordered_map>
 #include "AllStruct.h"
 
 using std::string;
@@ -14,13 +14,14 @@ class Safe {
 public:
     Safe();
     ~Safe();
-    void calc(vector<Edge>building_map,unordered_map<string,bool>data,vector<string>leave,unordered_map<string,int>&ans);
+    void calc(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,bool>data,vector<int>leave,unordered_map<int,int>&ans);
 private:
-    void Dijkstra();
+    void Dijkstra(string s);
+    void Output();
     vector<Edge>m;
-    unordered_map<string,int>dir;
-    unordered_map<string,int>table;
-    unordered_map<string,bool>fire;
+    unordered_map<int,int>dir;
+    unordered_map<int,int>table;
+    unordered_map<int,bool>fire;
     int dis[100005];
 };
 

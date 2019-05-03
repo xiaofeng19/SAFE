@@ -1,10 +1,17 @@
+#include <cstring>
+#include <fstream>
 #include "Safe.h"
+
+using std::string;
+using std::vector;
+using std::unordered_map;
+using std::ofstream;
 
 Safe::Safe(){}
 
 Safe::~Safe(){}
 
-void Safe::calc(unordered_map<string,int>map_table,vector<Edge>building_map,unordered_map<string,bool>data,vector<int>leave,unordered_map<int,int>&ans){
+void Safe::calc(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,bool>data,vector<int>leave,unordered_map<int,int>&ans){
     m=building_map;
     table=map_table;
     fire.clear();
@@ -15,6 +22,7 @@ void Safe::calc(unordered_map<string,int>map_table,vector<Edge>building_map,unor
     ans.clear();
     for (auto k:dir)
         ans[k.first]=k.second;
+    Output();
 }
 
 void Safe::Dijkstra(int s){
@@ -36,4 +44,8 @@ void Safe::Dijkstra(int s){
             }
         }
     }
+}
+
+void Safe::Output(){
+    ofstream fout("./OutputData/GiveData.txt");
 }

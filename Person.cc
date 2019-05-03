@@ -1,11 +1,18 @@
 #include <fstream>
+#include <string>
+#include <unordered_map>
+#include <vector>
 #include "Person.h"
+
+using std::unordered_map;
+using std::string;
+using std::vector;
 
 Person::Person(){}
 
 Person::~Person(){}
 
-void Person::action(unordered_map<string,int>map_table,vector<Edge>building_map,unordered_map<string,int>to;,unordered_map<string,One>table){
+void Person::Action(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,int>to,unordered_map<int,One>table){
     for (One &p:person){
         for (auto k:table){
             if (p.x==k.second.x&&p.y==k.second.y){
@@ -32,4 +39,5 @@ void Person::WriteLog(){
     OutputX.close();
     OutputY.close();
     std::ofstream OutputA("./OutputData/arrow.txt");
+    OutputA.close();
 }

@@ -15,14 +15,21 @@ Control::~Control(){
     delete safe;
 }
 
+void Control::StringToInt(){
+    int_to_string.clear();
+    for (auto k:string_to_int)
+        int_to_string[k.second]=k.first;
+}
+
 void Control::Run(){
-    map_manager->get_map(map_table,building_map,leave,table,string_to_num);
-    map_manager->get_data(string_to_num);
+    map_manager->get_map(map_table,building_map,leave,table);
+    map_manager->get_data(string_to_int);
+    StringToInt();
     while (true){
         get_data->get(fire_data);
         if (get_data->fire){
             safe->calc(map_table,building_map,fire_data,leave,go_to);
-            person->action(go_to,table);
+            person->Action(go_to,table);
         }
         else if (get_data->close())
             break;

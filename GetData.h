@@ -3,16 +3,17 @@
 
 #include <string>
 #include <vector>
+#include <unordered_map>
 #include "AllStruct.h"
 
+using std::unordered_map;
 using std::string;
-using std::vector;
 
 class GetData {
 public:
     GetData();
     ~GetData();
-    void get(unordered_map<string,bool>&fire_data);
+    void get(unordered_map<int,bool>&fire_data);
     bool close();
     bool fire;
 private:

@@ -10,9 +10,9 @@
 #include "Person.h"
 #include "Safe.h"
 
-using std::string;
-using std::vector;
-using std::unordered_map;
+//using std::string;
+//using std::vector;
+//using std::unordered_map;
 
 class Control {
 public:
@@ -20,18 +20,22 @@ public:
     ~Control();
     void Run();
 private:
+    void StringToInt();
+
     GetMap *map_manager;
     GetData *get_data;
     Person *person;
     Safe *safe;
 
     vector<Edge>building_map;
-    vector<string>leave;
-    unordered_map<string,bool>fire_data;
-    unordered_map<string,One>table;
-    unordered_map<string,int>go_to;
-    unordered_map<string,int>map_table;
-    unordered_map<string,int>string_to_num;
+    vector<int>leave;
+    unordered_map<int,bool>fire_data_string;
+    unordered_map<int,bool>fire;
+    unordered_map<int,One>table;
+    unordered_map<int,int>go_to;
+    unordered_map<int,int>map_table;
+    unordered_map<string,int>string_to_int;
+    unordered_map<int,string>int_to_string;
 };
 
 #endif  //_CONTROL_H_

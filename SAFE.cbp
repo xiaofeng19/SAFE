@@ -37,8 +37,8 @@
 		<Unit filename="Control.h" />
 		<Unit filename="GetData.cc" />
 		<Unit filename="GetData.h" />
-		<Unit filename="MapManager.cc" />
-		<Unit filename="MapManager.h" />
+		<Unit filename="GetMap.cc" />
+		<Unit filename="GetMap.h" />
 		<Unit filename="Person.cc" />
 		<Unit filename="Person.h" />
 		<Unit filename="Safe.cc" />

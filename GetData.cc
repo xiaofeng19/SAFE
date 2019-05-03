@@ -22,13 +22,15 @@ void get(unordered_map<string,bool>&fire_data){
         fire_data[f]=(s[i+2]=='1');
         fire&=fire_data[f];
     }
+    Input.close()
 }
 
 bool close(){
     ifstream Input("./InputData/close.txt");
-    string s="";
-    while (Input>>s);
-    if (s!="")
+    string s;
+    Input>>s;
+    Input.close();
+    if (s=="close")
         return true;
     return false;
 }

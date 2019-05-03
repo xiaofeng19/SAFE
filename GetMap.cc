@@ -24,7 +24,8 @@ void GetMap::get_map(unordered_map<string,int>&map_table,vector<Edge>&m,vecotr<s
         int m;
         Input>>m;
         for (int j=0;j<m;j++){
-            int to,dir,dist;
+            int dir,dist;
+            string to;
             Input>>to>>dir>>dist;
             m.push_back(Edge(to,dist,map_table[i],dir));
             map_table[i]=m.size()-1;
@@ -32,7 +33,7 @@ void GetMap::get_map(unordered_map<string,int>&map_table,vector<Edge>&m,vecotr<s
     }
     Input>>n;
     for (int i=0;i<n;i++){
-        int m;
+        string m;
         Input>>m;
         leave.push_back(m);
     }

@@ -16,7 +16,8 @@ Control::~Control(){
 }
 
 void Control::Run(){
-    map_manager->get_map(map_table,building_map,leave,table);
+    map_manager->get_map(map_table,building_map,leave,table,string_to_num);
+    map_manager->get_data(string_to_num);
     while (true){
         get_data->get(fire_data);
         if (get_data->fire){

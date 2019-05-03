@@ -1,5 +1,8 @@
 #include <fstream>
+#include <string>
 #include "GetMap.h"
+
+using std::string;
 
 GetMap::GetMap(){}
 
@@ -34,4 +37,13 @@ void GetMap::get_map(unordered_map<int,int>&map_table,vector<Edge>&m,vecotr<int>
         leave.push_back(m);
     }
     Input.close();
+}
+
+void GetMap::get_data(unordered_map<string,int>&num){
+    std::ifstream Input("./InputData/table.txt");
+    num.clear();
+    int n=1;
+    string s;
+    while (Input>>s)
+        num[s]=n++;
 }

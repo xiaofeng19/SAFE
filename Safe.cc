@@ -4,8 +4,9 @@ Safe::Safe(){}
 
 Safe::~Safe(){}
 
-void Safe::calc(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,bool>data,vector<int>leave,unordered_map<int,int>&ans){
+void Safe::calc(unordered_map<string,int>map_table,vector<Edge>building_map,unordered_map<int,bool>data,vector<int>leave,unordered_map<int,int>&ans){
     m=building_map;
+    table=map_table;
     fire.clear();
     for (auto k:data)
         fire[k.first]=k.second;

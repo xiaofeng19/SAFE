@@ -1,10 +1,12 @@
 #ifndef _SAFE_H_
 #define _SAFE_H_
 
+#include <string>
 #include <vector>
 #include <map>
 #include "AllStruct.h"
 
+using std::string;
 using std::vector;
 using std::unordered_map;
 
@@ -12,13 +14,13 @@ class Safe {
 public:
     Safe();
     ~Safe();
-    void calc(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,bool>data,vector<int>leave,unordered_map<int,int>&ans);
+    void calc(vector<Edge>building_map,unordered_map<string,bool>data,vector<string>leave,unordered_map<string,int>&ans);
 private:
     void Dijkstra();
     vector<Edge>m;
-    unordered_map<int,int>dir;
-    unordered_map<int,int>table
-    unordered_map<int,bool>fire;
+    unordered_map<string,int>dir;
+    unordered_map<string,int>table;
+    unordered_map<string,bool>fire;
     int dis[100005];
 };
 

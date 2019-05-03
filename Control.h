@@ -4,7 +4,7 @@
 #include <vector>
 #include <map>
 #include "AllStruct.h"
-#include "MapManager.h"
+#include "GetMap.h"
 #include "GetData.h"
 #include "Person.h"
 #include "Safe.h"
@@ -18,7 +18,7 @@ public:
     ~Control();
     void Run();
 private:
-    MapManager *map_manager;
+    GetMap *map_manager;
     GetData *get_data;
     Person *person;
     Safe *safe;

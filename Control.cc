@@ -1,8 +1,8 @@
-#include <unistd.h>
+#include <windows.h>
 #include "Control.h"
 
 Control::Control(){
-    map_manager=new MapManager;
+    map_manager=new GetMap;
     get_data=new GetData;
     person=new Person;
     safe=new Safe;
@@ -25,6 +25,6 @@ void Control::Run(){
         }
         else if (get_data->close())
             break;
-        sleep(0.5);
+        Sleep(500);
     }
 }

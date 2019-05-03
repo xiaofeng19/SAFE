@@ -11,7 +11,7 @@ GetData::~GetData(){}
 void get(unordered_map<int,bool>&fire_data){}
 
 bool close(){
-    std::ifstream Input("./close.safe");
+    std::ifstream Input("./InputData/close.txt");
     string s="";
     while (Input>>s);
     if (s!="")

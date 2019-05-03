@@ -1,16 +1,16 @@
 #include <fstream>
-#include "MapManager.h"
+#include "GetMap.h"
 
-MapManager::MapManager(){}
+GetMap::GetMap(){}
 
-MapManager::~MapManager(){}
+GetMap::~GetMap(){}
 
-void MapManager::get_map(unordered_map<int,int>&map_table,vector<Edge>&m,vecotr<int>&leave,unordered_map<int,One>&table){
+void GetMap::get_map(unordered_map<int,int>&map_table,vector<Edge>&m,vecotr<int>&leave,unordered_map<int,One>&table){
     map_table.clear();
     m.clear();
     leave.clear();
     table.clear();
-    std::fstream Input("./input.safe");
+    std::fstream Input("./map.safe");
     int n,m;
     Input>>n;
     for (int i=1;i<=n;i++){

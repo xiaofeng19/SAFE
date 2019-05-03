@@ -1,3 +1,4 @@
+#include <fstream>
 #include "Person.h"
 
 Person::Person(){}
@@ -17,4 +18,7 @@ void Person::action(unordered_map<int,int>map_table,vector<Edge>building_map,uno
     WriteLog();
 }
 
-void Person::WriteLog(){}
+void Person::WriteLog(){
+    std::ofstream Output("./OutputData/x.txt");
+    
+}

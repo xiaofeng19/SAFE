@@ -5,7 +5,7 @@ Person::Person(){}
 
 Person::~Person(){}
 
-void Person::action(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,int>to;,unordered_map<int,One>table){
+void Person::action(unordered_map<string,int>map_table,vector<Edge>building_map,unordered_map<string,int>to;,unordered_map<string,One>table){
     for (One &p:person){
         for (auto k:table){
             if (p.x==k.second.x&&p.y==k.second.y){

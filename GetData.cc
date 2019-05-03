@@ -8,7 +8,7 @@ GetData::GetData(){}
 
 GetData::~GetData(){}
 
-void get(unordered_map<int,bool>&fire_data){
+void get(unordered_map<string,bool>&fire_data){
     std::ifstream Input("./InputData/fire.txt");
     int f;
     fire_data.clear();

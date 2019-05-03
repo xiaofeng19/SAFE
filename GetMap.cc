@@ -8,7 +8,7 @@ GetMap::GetMap(){}
 
 GetMap::~GetMap(){}
 
-void GetMap::get_map(unordered_map<int,int>&map_table,vector<Edge>&m,vecotr<int>&leave,unordered_map<int,One>&table){
+void GetMap::get_map(unordered_map<string,int>&map_table,vector<Edge>&m,vecotr<string>&leave,unordered_map<string,One>&table){
     map_table.clear();
     m.clear();
     leave.clear();

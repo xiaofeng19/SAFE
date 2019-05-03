@@ -16,19 +16,22 @@ Control::~Control(){
 }
 
 void Control::StringToInt(){
-    int_to_string.clear();
-    for (auto k:string_to_int)
-        int_to_string[k.second]=k.first;
+    fire.clear();
+    for (auto k:fire_data_string)
+        fire[string_to_int[k.first]]=k.second;
 }
 
 void Control::Run(){
     map_manager->get_map(map_table,building_map,leave,table);
     map_manager->get_data(string_to_int);
-    StringToInt();
+    int_to_string.clear();
+    for (auto k:string_to_int)
+        int_to_string[k.second]=k.first;
     while (true){
-        get_data->get(fire_data);
+        get_data->get(fire_data_string);
+        StringToInt();
         if (get_data->fire){
-            safe->calc(map_table,building_map,fire_data,leave,go_to);
+            safe->calc(map_table,building_map,fire,leave,go_to,int_to_string);
             person->Action(go_to,table);
         }
         else if (get_data->close())

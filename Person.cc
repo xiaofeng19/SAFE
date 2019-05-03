@@ -8,11 +8,16 @@ using std::unordered_map;
 using std::string;
 using std::vector;
 
-Person::Person(){}
+Person::Person(){
+    dx[0]=0,dy[0]=1;
+    dx[1]=1,dy[1]=0;
+    dx[2]=0,dy[2]=-1;
+    dx[3]=-1,dy[3]=0;
+}
 
 Person::~Person(){}
 
-void Person::Action(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,int>to,unordered_map<int,One>table){
+void Person::Action(unordered_map<int,int>to,unordered_map<int,One>table){
     for (One &p:person){
         for (auto k:table){
             if (p.x==k.second.x&&p.y==k.second.y){

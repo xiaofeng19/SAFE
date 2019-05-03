@@ -1,17 +1,20 @@
 #include <cstring>
 #include <fstream>
+#include <queue>
 #include "Safe.h"
 
 using std::string;
 using std::vector;
 using std::unordered_map;
+using std::priority_queue;
+using std::pair;
 using std::ofstream;
 
 Safe::Safe(){}
 
 Safe::~Safe(){}
 
-void Safe::calc(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,bool>data,vector<int>leave,unordered_map<int,int>&ans){
+void Safe::calc(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,bool>data,vector<int>leave,unordered_map<int,int>&ans,unordered_map<int,string>num){
     m=building_map;
     table=map_table;
     fire.clear();
@@ -22,14 +25,14 @@ void Safe::calc(unordered_map<int,int>map_table,vector<Edge>building_map,unorder
     ans.clear();
     for (auto k:dir)
         ans[k.first]=k.second;
-    Output();
+    Output(num);
 }
 
 void Safe::Dijkstra(int s){
     memset(dis,0x3f,sizeof(dis));
     dis[s]=0;
-    priority_queue<pair<int,int>,vector<pair<int,int> >, greater<pair<int,int> > > qq;
-    qq.push(make_pair(dis[s],s));
+    priority_queue<pair<int,int>,vector<pair<int,int> >, std::greater<pair<int,int> > > qq;
+    qq.push(std::make_pair(dis[s],s));
     while (!qq.empty()){
         int preval=qq.top().first;
         int x=qq.top().second;
@@ -40,12 +43,25 @@ void Safe::Dijkstra(int s){
             if (dis[m[i].to]>dis[x]+m[i].dist){
                 dir[m[i].to]=m[i].dir;
                 dis[m[i].to]=dis[x]+m[i].dist;
-                qq.push(make_pair(dis[m[i].to],m[i].to));
+                qq.push(std::make_pair(dis[m[i].to],m[i].to));
             }
         }
     }
 }
 
-void Safe::Output(){
+void Safe::Output(unordered_map<int,string>num){
     ofstream fout("./OutputData/GiveData.txt");
+    fout<<"S";
+    for (auto k:dir){
+        for (int i=0;i<4;i++){
+            fout<<num[k.first]<<i;
+            if (i==k.second)
+                fout<<1;
+            else
+                fout<<0;
+            fout<<"a";
+        }
+    }
+    fout<<"E";
+    fout.close();
 }

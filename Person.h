@@ -14,7 +14,7 @@ class Person {
 public:
     Person();
     ~Person();
-    void Action(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,int>to,unordered_map<int,One>table);
+    void Action(unordered_map<int,int>to,unordered_map<int,One>table);
 private:
     void WriteLog();
     vector<One>person;

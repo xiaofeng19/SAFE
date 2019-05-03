@@ -29,7 +29,7 @@ private:
 
     vector<Edge>building_map;
     vector<int>leave;
-    unordered_map<int,bool>fire_data_string;
+    unordered_map<string,bool>fire_data_string;
     unordered_map<int,bool>fire;
     unordered_map<int,One>table;
     unordered_map<int,int>go_to;

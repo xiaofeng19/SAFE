@@ -14,10 +14,10 @@ class Safe {
 public:
     Safe();
     ~Safe();
-    void calc(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,bool>data,vector<int>leave,unordered_map<int,int>&ans);
+    void calc(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,bool>data,vector<int>leave,unordered_map<int,int>&ans,unordered_map<int,string>num);
 private:
-    void Dijkstra(string s);
-    void Output();
+    void Dijkstra(int s);
+    void Output(unordered_map<int,string>num);
     vector<Edge>m;
     unordered_map<int,int>dir;
     unordered_map<int,int>table;

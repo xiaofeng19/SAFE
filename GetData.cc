@@ -1,24 +1,31 @@
 #include <fstream>
 #include <string>
+#include <iostream>
 #include "GetData.h"
 
 using std::string;
+using std::ifstream;
 
-GetData::GetData(){}
+GetData::GetData(){
+    fire=false;
+}
 
 GetData::~GetData(){}
 
 void get(unordered_map<string,bool>&fire_data){
-    std::ifstream Input("./InputData/fire.txt");
-    int f;
+    ifstream Input("./InputData/fire.txt");
+    string s;
     fire_data.clear();
-    while (Input>>f)
-        fire_data[f]=true;
-    fire=(fire_data.size()!=0);
+    getline(Input,f);
+    for (int i=1;i+3<s.size();i+=4){
+        string f=s.substr(i,2);
+        fire_data[f]=(s[i+2]=='1');
+        fire&=fire_data[f];
+    }
 }
 
 bool close(){
-    std::ifstream Input("./InputData/close.txt");
+    ifstream Input("./InputData/close.txt");
     string s="";
     while (Input>>s);
     if (s!="")

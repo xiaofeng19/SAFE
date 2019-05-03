@@ -4,7 +4,7 @@ Safe::Safe(){}
 
 Safe::~Safe(){}
 
-void Safe::calc(unordered_map<string,int>map_table,vector<Edge>building_map,unordered_map<int,bool>data,vector<int>leave,unordered_map<int,int>&ans){
+void Safe::calc(unordered_map<string,int>map_table,vector<Edge>building_map,unordered_map<string,bool>data,vector<int>leave,unordered_map<int,int>&ans){
     m=building_map;
     table=map_table;
     fire.clear();

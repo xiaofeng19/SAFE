@@ -64,4 +64,6 @@ void Safe::Output(unordered_map<int,string>num){
     }
     fout<<"E";
     fout.close();
+    ofstream OutputA("./OutputData/arrow.txt");
+    OutputA.close();
 }

@@ -2,6 +2,7 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <cmath>
 #include "Person.h"
 
 using std::unordered_map;
@@ -10,22 +11,25 @@ using std::vector;
 
 Person::Person(){
     dx[0]=0,dy[0]=1;
-    dx[1]=1,dy[1]=0;
+    dx[1]=-1,dy[1]=0;
     dx[2]=0,dy[2]=-1;
-    dx[3]=-1,dy[3]=0;
+    dx[3]=1,dy[3]=0;
 }
 
 Person::~Person(){}
 
 void Person::Action(unordered_map<int,int>to,unordered_map<int,One>table){
     for (One &p:person){
+        int o=0,len=0x3f;
         for (auto k:table){
-            if (p.x==k.second.x&&p.y==k.second.y){
-                p.x+=dx[to[k.first]];
-                p.y+=dy[to[k.first]];
-                break;
+            int t=abs(k.second.x-p.x)+abs(k.second.y-p.y);
+            if (t<len){
+                len=t;
+                o=k.first;
             }
         }
+        p.x+=dx[to[o]];
+        p.y+=dy[to[o]];
     }
     WriteLog();
 }
@@ -43,6 +47,4 @@ void Person::WriteLog(){
     }
     OutputX.close();
     OutputY.close();
-    std::ofstream OutputA("./OutputData/arrow.txt");
-    OutputA.close();
 }

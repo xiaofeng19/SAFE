@@ -42,14 +42,16 @@ void GetMap::get_map(unordered_map<int,int>&map_table,vector<Edge>&m,vector<int>
     Input.close();
 }
 
-void GetMap::get_data(unordered_map<string,int>&sti){
+void GetMap::get_data(unordered_map<string,int>&sti,unordered_map<int,string>&its){
     std::ifstream Input("./InputData/station_table.txt");
     sti.clear();
-    int n=1;
+    its.clear();
     string s;
-    while (getline(Input,s)){
-        sti[s]=n++;
-        cout<<s<<endl;
+    int n;
+    while (Input>>s>>n){
+        sti[s]=n;
+        its[n]=s;
+        //cout<<s<<endl;
     }
     Input.close();
 }

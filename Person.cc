@@ -18,7 +18,38 @@ Person::Person(){
 
 Person::~Person(){}
 
+void Person::GetPerson(){
+    person.clear();
+    std::ifstream InputX("./OutputData/x.txt");
+    std::ifstream InputY("./OutputData/y.txt");
+    string X,Y;
+    getline(InputX,X);
+    getline(InputY,Y);
+    InputX.close();
+    InputY.close();
+    int tmp=0;
+    for (int i=0;i<=X.size();i++){
+        if (i==X.size()||X[i]=='A'){
+            One one;
+            one.x=tmp;
+            person.push_back(one);
+            tmp=0;
+        }
+        else
+            tmp=tmp*10+X[i]-'0';
+    }
+    for (int i=0,o=0;i<=Y.size();i++){
+        if (i==Y.size()||Y[i]=='A'){
+            person[o++].y=tmp;
+            tmp=0;
+        }
+        else
+            tmp=tmp*10+Y[i]-'0';
+    }
+}
+
 void Person::Action(unordered_map<int,int>to,unordered_map<int,One>table){
+    GetPerson();
     for (One &p:person){
         int o=0,len=0x3f;
         for (auto k:table){

@@ -16,6 +16,7 @@ public:
     ~Person();
     void Action(unordered_map<int,int>to,unordered_map<int,One>table);
 private:
+    void GetPerson();
     void WriteLog();
     vector<One>person;
     int dx[4],dy[4];

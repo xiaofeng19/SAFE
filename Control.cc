@@ -27,13 +27,7 @@ void Control::StringToInt(){
 
 void Control::Run(){
     map_manager->get_map(map_table,building_map,leave,table);
-    map_manager->get_data(sti);
-    its.clear();
-    for (auto k:sti){
-        its[k.second]=k.first;
-        cout<<k.first<<" "<<k.second<<endl;
-    }
-    cout<<1<<endl;
+    map_manager->get_data(sti,its);
     while (true){
         get_data->get(fire_data_string);
         StringToInt();

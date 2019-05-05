@@ -2,7 +2,7 @@
 1556901314 source:f:\ubuntu\work\work\project\safe\safe\main.cc
 	"Control.h"
 
-1556904436 f:\ubuntu\work\work\project\safe\safe\control.h
+1557042600 f:\ubuntu\work\work\project\safe\safe\control.h
 	<string>
 	<vector>
 	<map>
@@ -12,10 +12,10 @@
 	"Person.h"
 	"Safe.h"
 
-1556902322 f:\ubuntu\work\work\project\safe\safe\allstruct.h
+1556907673 f:\ubuntu\work\work\project\safe\safe\allstruct.h
 	<string>
 
-1556902315 f:\ubuntu\work\work\project\safe\safe\getmap.h
+1557045822 f:\ubuntu\work\work\project\safe\safe\getmap.h
 	<string>
 	<vector>
 	<unordered_map>
@@ -33,31 +33,40 @@
 	<unordered_map>
 	"AllStruct.h"
 
-1556904641 f:\ubuntu\work\work\project\safe\safe\safe.h
+1557044013 f:\ubuntu\work\work\project\safe\safe\safe.h
 	<string>
 	<vector>
 	<unordered_map>
 	"AllStruct.h"
 
-1556904250 source:f:\ubuntu\work\work\project\safe\safe\person.cc
+1556910953 source:f:\ubuntu\work\work\project\safe\safe\person.cc
 	<fstream>
 	<string>
 	<unordered_map>
 	<vector>
+	<cmath>
 	"Person.h"
 
-1556902059 source:f:\ubuntu\work\work\project\safe\safe\getdata.cc
+1557045258 source:f:\ubuntu\work\work\project\safe\safe\getdata.cc
+	<iostream>
 	<fstream>
 	"GetData.h"
 
-1556904603 source:f:\ubuntu\work\work\project\safe\safe\getmap.cc
+1557045877 source:f:\ubuntu\work\work\project\safe\safe\getmap.cc
+	<iostream>
 	<fstream>
 	<string>
 	"GetMap.h"
 
-1556904717 source:f:\ubuntu\work\work\project\safe\safe\safe.cc
+1557044816 source:f:\ubuntu\work\work\project\safe\safe\safe.cc
+	<iostream>
 	<cstring>
 	<fstream>
 	<queue>
 	"Safe.h"
+
+1557045892 source:f:\ubuntu\work\work\project\safe\safe\control.cc
+	<iostream>
+	<windows.h>
+	"Control.h"
 

@@ -1,3 +1,4 @@
+#include <iostream>
 #include <cstring>
 #include <fstream>
 #include <queue>
@@ -9,12 +10,15 @@ using std::unordered_map;
 using std::priority_queue;
 using std::pair;
 using std::ofstream;
+using std::cout;
+using std::endl;
 
 Safe::Safe(){}
 
 Safe::~Safe(){}
 
-void Safe::calc(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,bool>data,vector<int>leave,unordered_map<int,int>&ans,unordered_map<int,string>num){
+void Safe::calc(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,bool>data,vector<int>leave,unordered_map<int,int>&ans,unordered_map<int,string>its){
+    //cout<<"calc"<<endl;
     m=building_map;
     table=map_table;
     fire.clear();
@@ -25,7 +29,7 @@ void Safe::calc(unordered_map<int,int>map_table,vector<Edge>building_map,unorder
     ans.clear();
     for (auto k:dir)
         ans[k.first]=k.second;
-    Output(num);
+    Output(its);
 }
 
 void Safe::Dijkstra(int s){
@@ -49,17 +53,17 @@ void Safe::Dijkstra(int s){
     }
 }
 
-void Safe::Output(unordered_map<int,string>num){
+void Safe::Output(unordered_map<int,string>its){
     ofstream fout("./OutputData/GiveData.txt");
-    fout<<"S";
     for (auto k:dir){
         for (int i=0;i<4;i++){
-            fout<<num[k.first]<<i;
+            fout<<"S";
+            fout<<its[k.first]<<i;
+            //cout<<its[k.first]<<i;
             if (i==k.second)
                 fout<<1;
             else
                 fout<<0;
-            fout<<"a";
         }
     }
     fout<<"E";

@@ -34,8 +34,8 @@ private:
     unordered_map<int,One>table;
     unordered_map<int,int>go_to;
     unordered_map<int,int>map_table;
-    unordered_map<string,int>string_to_int;
-    unordered_map<int,string>int_to_string;
+    unordered_map<string,int>sti;
+    unordered_map<int,string>its;
 };
 
 #endif  //_CONTROL_H_

@@ -15,7 +15,7 @@ public:
     GetMap();
     ~GetMap();
     void get_map(unordered_map<int,int>&map_table,vector<Edge>&m,vector<int>&leave,unordered_map<int,One>&table);
-    void get_data(unordered_map<string,int>&num);
+    void get_data(unordered_map<string,int>&sti);
 private:
 };
 

@@ -28,8 +28,12 @@ void Safe::calc(unordered_map<int,int>map_table,vector<Edge>building_map,unorder
         fire[k.first]=k.second;
     //cout<<1<<endl;
     memset(dis,0x3f,sizeof(dis));
-    for (int e:leave)
+    for (int e:leave){
+        if (fire[e])
+            continue;
         Dijkstra(e);
+    }
+
     //cout<<2<<endl;
     ans.clear();
     for (auto k:dir)

@@ -22,6 +22,26 @@ void Control::StringToInt(){
     fire.clear();
     for (auto k:fire_data_string)
         fire[sti[k.first]]=k.second;
+    if (fire[1]||fire[15]||fire[31]){
+        fire[1]=true;
+        fire[15]=true;
+        fire[31]=true;
+    }
+    if (fire[4]||fire[18]||fire[34]){
+        fire[4]=true;
+        fire[18]=true;
+        fire[34]=true;
+    }
+    if (fire[11]||fire[27]||fire[43]){
+        fire[11]=true;
+        fire[27]=true;
+        fire[43]=true;
+    }
+    if (fire[14]||fire[30]||fire[46]){
+        fire[14]=true;
+        fire[30]=true;
+        fire[46]=true;
+    }
 }
 
 void Control::OutputFire(){

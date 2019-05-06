@@ -16,10 +16,13 @@ public:
     ~Person();
     void Action(unordered_map<int,int>to,unordered_map<int,One>table);
 private:
+    bool judge(int x,int y);
+    void calc(unordered_map<int,int>to,unordered_map<int,One>table);
     void GetPerson();
     void WriteLog();
     vector<One>person;
     int dx[4],dy[4];
+    int m[1700][600];
 };
 
 #endif  //_PERSON_H_

@@ -14,9 +14,36 @@ Person::Person(){
     dx[1]=-5,dy[1]=0;
     dx[2]=0,dy[2]=5;
     dx[3]=5,dy[3]=0;
+    dx[4]=0,dy[4]=0;
 }
 
 Person::~Person(){}
+
+bool Person::judge(int x,int y){
+    bool flag=true;
+    if (x>=280&&x<=380&&(y<=230||(y>=280&&y<=380)||y>=430))
+        flag=false;
+    if (x>=130&&x<=230&&((y>=130&&y<=230)||(y>=430&&y<=530)))
+        flag=false;
+    if (x>=430&&x<=530&&((y>=130&&y<=230)||(y>=430&&y<=530)))
+        flag=false;
+}
+
+void Person::calc(unordered_map<int,int>to,unordered_map<int,One>table){
+    for (int i=80;i<=1680;i++){
+        for (int j=80;j<=580;j++){
+            int o=0,len=0x3f;
+            for (auto k:table){
+                int t=abs(k.second.x-i)+abs(k.second.y-j);
+                if (t<len){
+                    len=t;
+                    o=k.first;
+                }
+            }
+
+        }
+    }
+}
 
 void Person::GetPerson(){
     person.clear();
@@ -49,6 +76,7 @@ void Person::GetPerson(){
 }
 
 void Person::Action(unordered_map<int,int>to,unordered_map<int,One>table){
+    calc();
     GetPerson();
     for (One &p:person){
         int o=0,len=0x3f;

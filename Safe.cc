@@ -20,6 +20,7 @@ Safe::~Safe(){}
 
 void Safe::calc(unordered_map<int,int>map_table,vector<Edge>building_map,unordered_map<int,bool>data,vector<int>leave,unordered_map<int,int>&ans,unordered_map<int,string>its){
     //cout<<"calc"<<endl;
+    dir.clear();
     m=building_map;
     table=map_table;
     fire.clear();
@@ -33,13 +34,12 @@ void Safe::calc(unordered_map<int,int>map_table,vector<Edge>building_map,unorder
     ans.clear();
     for (auto k:dir)
         ans[k.first]=k.second;
-    Output(its);
+    Output(its,leave);
     //cout<<3<<endl;
 }
 
 void Safe::Dijkstra(int s){
-    //cout<<1<<endl;
-    //cout<<s<<endl;
+    //cout<<1<<" "<<s<<endl;
     dis[s]=0;
     //cout<<3<<endl;
     priority_queue<pair<int,int>,vector<pair<int,int> >, std::greater<pair<int,int> > > qq;
@@ -52,7 +52,7 @@ void Safe::Dijkstra(int s){
             continue;
         for (int i=table[x];i!=-1;i=m[i].nxt){
             if (dis[m[i].to]>dis[x]+m[i].dist){
-                dir[m[i].to]=m[i].dir;
+                dir[m[i].to]=(m[i].dir+2)%4;
                 dis[m[i].to]=dis[x]+m[i].dist;
                 qq.push(std::make_pair(dis[m[i].to],m[i].to));
             }
@@ -60,7 +60,7 @@ void Safe::Dijkstra(int s){
     }
 }
 
-void Safe::Output(unordered_map<int,string>its){
+void Safe::Output(unordered_map<int,string>its,vector<int>leave){
     ifstream InputA("./InputData/T.txt");
     unordered_map<string,vector<int> >tmp;
     tmp.clear();
@@ -82,12 +82,26 @@ void Safe::Output(unordered_map<int,string>its){
     int ans[200];
     memset(ans,0,sizeof(ans));
     for (auto k:dir){
-        cout<<its[k.first]<<" "<<k.second<<endl;
+        if (its.find(k.first)==its.end())
+            continue;
+        //cout<<k.first<<" "<<its[k.first]<<" "<<k.second<<endl;
+        /*
+        if (k.first==44||k.first==45){
+                cout<<k.first<<" "<<its[k.first]<<" "<<k.second<<" "<<tmp[its[k.first]][k.second]<<endl;
+        }
+        */
         for (int i=0;i<4;i++){
             fout<<"S";
             fout<<its[k.first]<<i;
             //cout<<its[k.first]<<i;
-            if (i==k.second){
+            bool flag=true;
+            for (int e:leave){
+                if (e==k.first){
+                    flag=false;
+                    break;
+                }
+            }
+            if (flag&&i==k.second){
                 fout<<1;
                 ans[tmp[its[k.first]][i]]=1;
             }

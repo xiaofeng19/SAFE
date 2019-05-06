@@ -29,9 +29,12 @@ void Control::Run(){
     while (true){
         cout<<"run"<<endl;
         get_data->get(fire_data_string);
+        //cout<<1<<endl;
         StringToInt();
+        //cout<<2<<endl;
         if (get_data->fire){
             safe->calc(map_table,building_map,fire,leave,go_to,its);
+            //cout<<3<<endl;
         }
         if (get_data->close())
             break;

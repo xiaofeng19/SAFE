@@ -1,4 +1,5 @@
 #include <fstream>
+#include <iostream>
 #include <string>
 #include <unordered_map>
 #include <vector>
@@ -8,6 +9,8 @@
 using std::unordered_map;
 using std::string;
 using std::vector;
+using std::cout;
+using std::endl;
 
 Person::Person(){
     dx[0]=0,dy[0]=-5;
@@ -76,7 +79,7 @@ void Person::GetPerson(){
 }
 
 void Person::Action(unordered_map<int,int>to,unordered_map<int,One>table){
-    calc();
+    //calc();
     GetPerson();
     for (One &p:person){
         int o=0,len=0x3f;
@@ -99,6 +102,7 @@ void Person::WriteLog(){
     for (int i=0;i<person.size();i++){
         OutputX<<person[i].x;
         OutputY<<person[i].y;
+        cout<<person[i].x<<" "<<person[i].y;
         if (i!=person.size()-1){
             OutputX<<"A";
             OutputY<<"A";

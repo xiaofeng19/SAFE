@@ -26,6 +26,7 @@ void Safe::calc(unordered_map<int,int>map_table,vector<Edge>building_map,unorder
     for (auto k:data)
         fire[k.first]=k.second;
     //cout<<1<<endl;
+    memset(dis,0x3f,sizeof(dis));
     for (int e:leave)
         Dijkstra(e);
     //cout<<2<<endl;
@@ -38,7 +39,6 @@ void Safe::calc(unordered_map<int,int>map_table,vector<Edge>building_map,unorder
 
 void Safe::Dijkstra(int s){
     //cout<<1<<endl;
-    memset(dis,0x3f,sizeof(dis));
     //cout<<s<<endl;
     dis[s]=0;
     //cout<<3<<endl;
@@ -96,7 +96,7 @@ void Safe::Output(unordered_map<int,string>its){
     }
     fout<<"E";
     OutputA<<0;
-    for (int i=2;i<=115;i++)
+    for (int i=2;i<=107;i++)
         OutputA<<ans[i];
     OutputA<<endl;
     fout.close();

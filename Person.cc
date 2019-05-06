@@ -10,10 +10,10 @@ using std::string;
 using std::vector;
 
 Person::Person(){
-    dx[0]=0,dy[0]=1;
-    dx[1]=-1,dy[1]=0;
-    dx[2]=0,dy[2]=-1;
-    dx[3]=1,dy[3]=0;
+    dx[0]=0,dy[0]=-5;
+    dx[1]=-5,dy[1]=0;
+    dx[2]=0,dy[2]=5;
+    dx[3]=5,dy[3]=0;
 }
 
 Person::~Person(){}

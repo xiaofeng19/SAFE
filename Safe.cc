@@ -67,7 +67,7 @@ void Safe::Output(unordered_map<int,string>its){
     for (int i=0;i<42;i++){
         string s;
         InputA>>s;
-        cout<<s<<endl;
+        //cout<<s<<endl;
         tmp[s].clear();
         for (int j=0;j<4;j++){
             int a;
@@ -96,7 +96,7 @@ void Safe::Output(unordered_map<int,string>its){
     }
     fout<<"E";
     OutputA<<0;
-    for (int i=1;i<115;i++)
+    for (int i=2;i<=115;i++)
         OutputA<<ans[i];
     OutputA<<endl;
     fout.close();

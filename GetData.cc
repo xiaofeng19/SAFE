@@ -24,7 +24,7 @@ void GetData::get(unordered_map<string,bool>&fire_data){
             string f=s.substr(i,2);
             fire_data[f]=(s[i+2]=='1');
             fire|=fire_data[f];
-            cout<<s<<" "<<fire_data[f]<<endl;
+            //cout<<s<<" "<<fire_data[f]<<endl;
         }
     }
     Input.close();

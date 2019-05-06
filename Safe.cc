@@ -51,7 +51,7 @@ void Safe::Dijkstra(int s){
         if (dis[x]<preval)
             continue;
         for (int i=table[x];i!=-1;i=m[i].nxt){
-            if (dis[m[i].to]>dis[x]+m[i].dist){
+            if (!fire[m[i].to]&&dis[m[i].to]>dis[x]+m[i].dist){
                 dir[m[i].to]=(m[i].dir+2)%4;
                 dis[m[i].to]=dis[x]+m[i].dist;
                 qq.push(std::make_pair(dis[m[i].to],m[i].to));

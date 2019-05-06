@@ -20,6 +20,7 @@ public:
     void Run();
 private:
     void StringToInt();
+    void OutputFire();
 
     GetMap *map_manager;
     GetData *get_data;

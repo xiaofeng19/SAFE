@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <windows.h>
 #include "Control.h"
 
@@ -23,18 +24,29 @@ void Control::StringToInt(){
         fire[sti[k.first]]=k.second;
 }
 
+void Control::OutputFire(){
+    std::ofstream FX("./OutputData/fx.txt");
+    std::ofstream FY("./OutputData/fy.txt");
+    for (auto k:fire){
+        if (k.second){
+            FX<<table[k.first].x-25<<"A";
+            FY<<table[k.first].y-25<<"A";
+        }
+    }
+    FX.close();
+    FY.close();
+}
+
 void Control::Run(){
     map_manager->get_map(map_table,building_map,leave,table);
     map_manager->get_data(sti,its);
     while (true){
         cout<<"run"<<endl;
         get_data->get(fire_data_string);
-        //cout<<1<<endl;
         StringToInt();
-        //cout<<2<<endl;
         if (get_data->fire){
+            OutputFire();
             safe->calc(map_table,building_map,fire,leave,go_to,its);
-            //cout<<3<<endl;
         }
         if (get_data->close())
             break;

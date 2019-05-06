@@ -7,7 +7,6 @@
 #include "AllStruct.h"
 #include "GetMap.h"
 #include "GetData.h"
-#include "Person.h"
 #include "Safe.h"
 
 //using std::string;
@@ -24,7 +23,6 @@ private:
 
     GetMap *map_manager;
     GetData *get_data;
-    Person *person;
     Safe *safe;
 
     vector<Edge>building_map;

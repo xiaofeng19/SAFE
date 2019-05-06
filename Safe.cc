@@ -61,26 +61,7 @@ void Safe::Dijkstra(int s){
 }
 
 void Safe::Output(unordered_map<int,string>its){
-    ifstream InputA("./InputData/T.txt");
-    unordered_map<string,vector<int> >tmp;
-    tmp.clear();
-    for (int i=0;i<42;i++){
-        string s;
-        InputA>>s;
-        //cout<<s<<endl;
-        tmp[s].clear();
-        for (int j=0;j<4;j++){
-            int a;
-            InputA>>a;
-            tmp[s].push_back(a);
-        }
-    }
-    InputA.close();
-
     ofstream fout("./OutputData/GiveData.txt");
-    ofstream OutputA("./OutputData/arrow.txt");
-    int ans[200];
-    memset(ans,0,sizeof(ans));
     for (auto k:dir){
         for (int i=0;i<4;i++){
             fout<<"S";
@@ -88,17 +69,11 @@ void Safe::Output(unordered_map<int,string>its){
             //cout<<its[k.first]<<i;
             if (i==k.second){
                 fout<<1;
-                ans[tmp[its[k.first]][i]]=1;
             }
             else
                 fout<<0;
         }
     }
     fout<<"E";
-    OutputA<<0;
-    for (int i=2;i<=115;i++)
-        OutputA<<ans[i];
-    OutputA<<endl;
     fout.close();
-    OutputA.close();
 }

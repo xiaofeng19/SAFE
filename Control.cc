@@ -27,6 +27,7 @@ void Control::Run(){
     map_manager->get_map(map_table,building_map,leave,table);
     map_manager->get_data(sti,its);
     while (true){
+        cout<<"run"<<endl;
         get_data->get(fire_data_string);
         StringToInt();
         if (get_data->fire){

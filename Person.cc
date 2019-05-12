@@ -52,8 +52,37 @@ void Person::GetPerson(){
     }
 }
 
+bool Person::judge(One &p){
+    if (p.x==1205&&(p.y==105||p.y==555))
+        p.x=655;
+    else if (p.x==1655&&(p.y==105||p.y==555))
+        p.x=1105;
+    else if (p.x==655&&(p.y==105||p.y==555))
+        p.x=105;
+    else if (p.x==1105&&(p.y==105||p.y==555))
+        p.x=555;
+    else
+        return false;
+    return true;
+}
+//245A795A1495
+//95A245A245
 void Person::Action(unordered_map<int,int>to,unordered_map<int,One>table){
     for (One &p:person){
+        if (judge(p))
+            continue;
+        if (p.x<=80||(p.x>=580&&p.x<=630))
+            continue;
+        if (p.x<=105&&(p.y<=405&&p.y>=255)){
+            p.x+=dx[3];
+            p.y+=dy[3];
+            continue;
+        }
+        else if (p.x>=555&&p.x<=580&&p.y<=405&&p.y>=255){
+            p.x+=dx[1];
+            p.y+=dy[1];
+            continue;
+        }
         for (auto k:table){
             int t=abs(k.second.x-p.x)+abs(k.second.y-p.y);
             if (t==0){

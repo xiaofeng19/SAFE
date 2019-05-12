@@ -18,6 +18,7 @@ public:
     void GetPerson();
 private:
     void WriteLog();
+    bool judge(One &p);
     vector<One>person;
     int dx[5],dy[5];
     int m[1700][600];

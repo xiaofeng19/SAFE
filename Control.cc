@@ -10,12 +10,14 @@ Control::Control(){
     map_manager=new GetMap;
     get_data=new GetData;
     safe=new Safe;
+    person=new Person;
 }
 
 Control::~Control(){
     delete map_manager;
     delete get_data;
     delete safe;
+    delete person;
 }
 
 void Control::StringToInt(){
@@ -69,6 +71,7 @@ void Control::Run(){
         if (get_data->fire){
             OutputFire();
             safe->calc(map_table,building_map,fire,leave,go_to,its);
+            person->Action(go_to,table);
         }
         if (get_data->close())
             break;

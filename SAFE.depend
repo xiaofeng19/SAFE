@@ -2,11 +2,9 @@
 1557114729 source:f:\ubuntu\work\work\project\safe\safe\main.cc
 	"Control.h"
 
-<<<<<<< HEAD
-1557114988 f:\ubuntu\work\work\project\safe\safe\control.h
-=======
-1557129952 f:\ubuntu\work\work\project\safe\safe\control.h
->>>>>>> showNoPerson
+1557130606 D
+
+1557673875 f:\ubuntu\work\work\project\safe\safe\control.h
 	<string>
 	<vector>
 	<map>
@@ -14,8 +12,31 @@
 	"GetMap.h"
 	"GetData.h"
 	"Safe.h"
+	"Person.h"
 
-1557114729 f:\ubuntu\work\work\project\safe\safe\allstruct.h
+1557130922 wNoPerson
+	<string>
+	<vector>
+	<map>
+	"AllStruct.h"
+	"GetMap.h"
+	"GetData.h"
+	"Safe.h"
+	<string>
+	<vector>
+	<unordered_map>
+	"AllStruct.h"
+	<iostream>
+	<cstring>
+	<fstream>
+	<queue>
+	"Safe.h"
+	<iostream>
+	<fstream>
+	<windows.h>
+	"Control.h"
+
+1557675581 f:\ubuntu\work\work\project\safe\safe\allstruct.h
 	<string>
 
 1557114729 f:\ubuntu\work\work\project\safe\safe\getmap.h
@@ -30,17 +51,13 @@
 	<unordered_map>
 	"AllStruct.h"
 
-1557119530 f:\ubuntu\work\work\project\safe\safe\person.h
+1557674029 f:\ubuntu\work\work\project\safe\safe\person.h
 	<string>
 	<vector>
 	<unordered_map>
 	"AllStruct.h"
 
-<<<<<<< HEAD
-1557114729 f:\ubuntu\work\work\project\safe\safe\safe.h
-=======
-1557128516 f:\ubuntu\work\work\project\safe\safe\safe.h
->>>>>>> showNoPerson
+1557673700 f:\ubuntu\work\work\project\safe\safe\safe.h
 	<string>
 	<vector>
 	<unordered_map>
@@ -65,22 +82,14 @@
 	<string>
 	"GetMap.h"
 
-<<<<<<< HEAD
-1557119264 source:f:\ubuntu\work\work\project\safe\safe\safe.cc
-=======
-1557130606 source:f:\ubuntu\work\work\project\safe\safe\safe.cc
->>>>>>> showNoPerson
+1557673811 source:f:\ubuntu\work\work\project\safe\safe\safe.cc
 	<iostream>
 	<cstring>
 	<fstream>
 	<queue>
 	"Safe.h"
 
-<<<<<<< HEAD
-1557119440 source:f:\ubuntu\work\work\project\safe\safe\control.cc
-=======
-1557130922 source:f:\ubuntu\work\work\project\safe\safe\control.cc
->>>>>>> showNoPerson
+1557676033 source:f:\ubuntu\work\work\project\safe\safe\control.cc
 	<iostream>
 	<fstream>
 	<windows.h>

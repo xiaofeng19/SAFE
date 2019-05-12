@@ -39,8 +39,6 @@
 		<Unit filename="GetData.h" />
 		<Unit filename="GetMap.cc" />
 		<Unit filename="GetMap.h" />
-		<Unit filename="Person.cc" />
-		<Unit filename="Person.h" />
 		<Unit filename="Safe.cc" />
 		<Unit filename="Safe.h" />
 		<Unit filename="main.cc" />

@@ -13,6 +13,7 @@ struct Edge {   //作为链式前向星的基本结构
 
 struct One {
     int x,y;
+    int a;
     One(int _x,int _y):x(_x),y(_y) {}
     One(){}
 };

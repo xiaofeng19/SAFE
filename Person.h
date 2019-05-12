@@ -15,10 +15,8 @@ public:
     Person();
     ~Person();
     void Action(unordered_map<int,int>to,unordered_map<int,One>table);
-private:
-    bool judge(int x,int y);
-    void calc(unordered_map<int,int>to,unordered_map<int,One>table);
     void GetPerson();
+private:
     void WriteLog();
     vector<One>person;
     int dx[5],dy[5];

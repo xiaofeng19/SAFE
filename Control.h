@@ -7,8 +7,8 @@
 #include "AllStruct.h"
 #include "GetMap.h"
 #include "GetData.h"
-#include "Person.h"
 #include "Safe.h"
+#include "Person.h"
 
 //using std::string;
 //using std::vector;
@@ -21,11 +21,12 @@ public:
     void Run();
 private:
     void StringToInt();
+    void OutputFire();
 
     GetMap *map_manager;
     GetData *get_data;
-    Person *person;
     Safe *safe;
+    Person *person;
 
     vector<Edge>building_map;
     vector<int>leave;
